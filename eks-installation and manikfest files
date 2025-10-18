@@ -33,9 +33,7 @@ eksctl utils associate-iam-oidc-provider --region eu-north-1 --cluster EKS-1 --a
 
 CREATE NODEGROUP:
 
-eksctl create nodegroup --cluster=EKS-1 --region=eu-north-1 --name=myworkernodes --node-type=c7i-flex.large --nodes=3 
---nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=newkey --managed --asg-access
- --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
+eksctl create nodegroup --cluster=EKS-1 --region=eu-north-1 --name=myworkernodes --node-type=c7i-flex.large --nodes=3 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=newkey --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
 
 UPDATE CLUSTER:
 
@@ -52,10 +50,10 @@ DELETE CLUSTER :
  
 eksctl delete cluster --name EKS-1 --region eu-north-1
 
+install jenkins with scripts
+yum install docker -y && systemctl start docker
+chmod 777 /var/run/docker.sock
 
-yum install docker -y
-systemctl start docker
-chmod 777 ///var/run/docker.sock
 ==============================================================================================================================================================
 
 vi service-account.yml
