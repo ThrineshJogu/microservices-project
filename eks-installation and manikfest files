@@ -50,4 +50,42 @@ rules:
 kubectl create -f role.yml -n webapps
 
 vi role-binding.yml
- 
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: app-rolebinding
+  namespace: webapps
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: app-role
+subjects:
+  - kind: ServiceAccount
+    name: jenkins
+    namespace: webapps
+
+kubectl create -f role-binding.yml -n webapps
+
+generate secret.
+vi secret.yml
+
+---
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: mysecretname
+  namespace: webapps
+  annotations:
+    kubernetes.io/service-account.name: jenkins
+
+kubectl create -f secret.yml -n webapps
+
+# to get secret token
+
+kubectl describe secret mysecret -n webapps
+
+
+
