@@ -28,7 +28,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: thrineshjogu/emailservice:latest
+        image: thrineshjogu/eksproject:emailservice
         ports:
         - containerPort: 8080
         env:
@@ -81,7 +81,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: thrineshjogu/checkoutservice:latest
+          image: thrineshjogu/eksproject:checkoutservice
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -143,7 +143,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: thrineshjogu/recommendationservice:latest
+        image: thrineshjogu/eksproject:recommendationservice
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -200,7 +200,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: thrineshjogu/frontend:latest
+          image: thrineshjogu/eksproject:frontend
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -297,7 +297,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: thrineshjogu/paymentservice:latest
+        image: thrineshjogu/eksproject:paymentservice
         ports:
         - containerPort: 50051
         env:
@@ -349,7 +349,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: thrineshjogu/productcatalogservice:latest
+        image: thrineshjogu/eksproject:productcatalogservice
         ports:
         - containerPort: 3550
         env:
@@ -401,7 +401,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: thrineshjogu/cartservice:latest
+        image: thrineshjogu/eksproject:cartservice
         ports:
         - containerPort: 7070
         env:
@@ -465,7 +465,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: thrineshjogu/loadgenerator:latest
+        image: thrineshjogu/eksproject:loadgenerator
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
@@ -496,7 +496,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: shaikmustafa/currencyservice:latest
+        image: thrineshjogu/eksproject:currencyservice
         ports:
         - name: grpc
           containerPort: 7000
@@ -548,7 +548,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: thrineshjogu/shippingservice:latest
+        image: thrineshjogu/eksproject:shippingservice
         ports:
         - containerPort: 50051
         env:
@@ -654,7 +654,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: thrineshjogu/adservice:latest
+        image: thrineshjogu/eksproject:adservice
         ports:
         - containerPort: 9555
         env:
