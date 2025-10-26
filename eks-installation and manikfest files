@@ -146,4 +146,6 @@ kubectl create -f secret.yml -n webapps
 kubectl describe secret mysecret -n webapps
 
 
+delete cluster:
 
+eksctl delete cluster --name EKS-1 --region eu-north-1
