@@ -55,7 +55,7 @@ yum install docker -y && systemctl start docker
 chmod 777 /var/run/docker.sock
 
 ==============================================================================================================================================================
-
+kubectl create namespace webapps
 vi service-account.yml
 ---
 apiVersion: v1
