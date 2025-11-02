@@ -103,6 +103,8 @@ rules:
       - replicationcontrollers
       - serviceaccounts
       - services
+      - statefulsets
+      - cronjobs
     verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 
 kubectl create -f role.yml -n webapps
